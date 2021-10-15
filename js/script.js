@@ -1,4 +1,4 @@
-function tap() {
+function videotap() {
 	console.log("tap");
 	fullscreen();
 	var myVideo = document.getElementById("video");
@@ -9,7 +9,7 @@ function tap() {
 		myVideo.pause(); 
 	}
 }
-$(document).on('click touchstart', tap());
+if ("ontouchstart" in document.documentElement) {$(document).on('click touchstart', videotap());}
 
 function fullscreen() {
 document.documentElement.requestFullscreen().catch((e) => {
