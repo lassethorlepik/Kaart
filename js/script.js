@@ -1,5 +1,4 @@
 function videotap() {
-	console.log("tap");
 	fullscreen();
 	var myVideo = document.getElementById("video");
 	if (myVideo.paused) {
@@ -9,7 +8,7 @@ function videotap() {
 		myVideo.pause(); 
 	}
 }
-if ("ontouchstart" in document.documentElement) {$(document).on('click touchstart', videotap());}
+$(document).on('tap click', function(){videotap()});
 
 function fullscreen() {
 document.documentElement.requestFullscreen().catch((e) => {
